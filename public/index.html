@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tresor: the site safety portal for construction contractors</title>
+<meta name="description" content="Sign-in, training, toolbox talks, RAMS and digitised forms for the whole site team, in one portal that is watched daily.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#18201b;--ink2:#4b5550;--faint:#8a938e;--paper:#f4f1ea;--line:#e2ddd2;--card:#fff;--navy:#1f3a5f;--navy2:#2c5280;--deep:#0f1a2b;--sky:#8fb3e3;--radius:14px;--shadow:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(24,32,27,.05)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:17px;line-height:1.55}
+a{color:var(--navy)}
+h1,h2,h3{margin:0;letter-spacing:-.02em;line-height:1.15}
+p{margin:0}
+.wrap{max-width:1140px;margin:0 auto;padding:0 1.5rem}
+.wordmark{font-weight:800;font-size:1.5rem;letter-spacing:-.03em;color:var(--ink);text-decoration:none}
+.wordmark span{color:var(--navy)}
+.dark .wordmark{color:#fff}.dark .wordmark span{color:var(--sky)}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
+.dark .eyebrow,.navy .eyebrow{color:var(--sky)}
+.btn{font:inherit;font-weight:700;font-size:.95rem;border:1px solid var(--navy);background:var(--navy);color:#fff;border-radius:10px;padding:.8rem 1.3rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem}
+.btn:hover{background:var(--navy2)}
+.btn.ghost{background:transparent;color:var(--navy);border-color:var(--navy)}
+.dark .btn.ghost{color:#fff;border-color:#4b6487}
+.dark .btn.ghost:hover{background:#1a2a44}
+section{padding:5.5rem 0}
+.dark{background:var(--deep);color:#fff}
+.navy{background:var(--navy);color:#fff}
+.muted{color:var(--ink2)}.dark .muted,.navy .muted{color:#b8c4d6}
+
+nav{position:sticky;top:0;z-index:5;background:rgba(244,241,234,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
+nav .links{display:flex;gap:1.4rem;align-items:center}
+nav .links a{color:var(--ink2);text-decoration:none;font-weight:600;font-size:.92rem}
+nav .links a:hover{color:var(--navy)}
+nav .links a.btn{color:#fff;padding:.55rem 1rem}
+@media(max-width:760px){nav .links a:not(.btn){display:none}}
+
+.hero{padding:6.5rem 0 5rem}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(2.4rem,5.2vw,4rem);font-weight:800;letter-spacing:-.035em}
+.hero .lead{font-size:1.2rem;color:var(--ink2);margin:1.4rem 0 2rem;max-width:34rem}
+.hero .cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero .sub{margin-top:1.2rem;font-size:.9rem;color:var(--faint)}
+.mock{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.mock .top{background:var(--deep);color:#fff;padding:.7rem 1rem;display:flex;justify-content:space-between;align-items:center;font-size:.85rem}
+.mock .top b{font-weight:800;letter-spacing:-.03em}.mock .top b span{color:var(--sky)}
+.mock .body{padding:1rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-bottom:.9rem}
+.stat{border:1px solid var(--line);border-radius:10px;padding:.6rem .7rem}
+.stat .k{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.stat .n{font-size:1.3rem;font-weight:800}
+.stat.warn .n{color:#b26a00}.stat.ok .n{color:#1e7a4a}
+.row{display:flex;justify-content:space-between;align-items:center;padding:.55rem 0;border-top:1px solid var(--line);font-size:.88rem;gap:.6rem}
+.pill{font-size:.7rem;font-weight:700;padding:.15rem .5rem;border-radius:999px;white-space:nowrap}
+.pill.ok{background:#e6f3ec;color:#1e7a4a}.pill.warn{background:#fdf1dc;color:#b26a00}.pill.bad{background:#fbe7e5;color:#b3261e}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding:4rem 0 3.5rem}}
+
+.head{max-width:46rem;margin-bottom:2.6rem}
+.head h2{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800;margin-top:.6rem}
+.head p{margin-top:.9rem;font-size:1.08rem;color:var(--ink2)}
+.dark .head p,.navy .head p{color:#b8c4d6}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.cards.four{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow)}
+.card h3{font-size:1.12rem;font-weight:700;margin:.4rem 0 .5rem}
+.card p{color:var(--ink2);font-size:.96rem}
+.card .num{font-size:.78rem;font-weight:700;color:var(--navy);letter-spacing:.08em}
+@media(max-width:960px){.cards.four{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){.cards{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.cards,.cards.four{grid-template-columns:1fr}}
+
+.statement h2{font-size:clamp(1.9rem,3.8vw,2.9rem);font-weight:800;max-width:52rem}
+.statement p.big{font-size:1.2rem;max-width:48rem;margin-top:1.4rem;color:#d6e2f2}
+.statement .tag{margin-top:2rem;font-weight:700;color:var(--sky)}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid #2c4466;border-radius:var(--radius);overflow:hidden}
+.step{padding:1.5rem;border-left:1px solid #2c4466}
+.step:first-child{border-left:none}
+.step .big{font-size:2.4rem;font-weight:800;color:var(--sky);line-height:1}
+.step h3{font-size:1.05rem;margin:.6rem 0 .4rem}
+.step p{color:#b8c4d6;font-size:.95rem}
+.step.last{background:#1f3a5f}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr}.step:nth-child(3){border-left:none}.step:nth-child(n+3){border-top:1px solid #2c4466}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}.step{border-left:none;border-top:1px solid #2c4466}.step:first-child{border-top:none}}
+
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:start}
+.two p.big{font-size:1.15rem;margin-top:1rem}
+.list{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow)}
+.list .eyebrow{margin-bottom:.6rem}
+.list div{padding:.8rem 0;border-top:1px solid var(--line);font-weight:500}
+.list div:first-of-type{border-top:none}
+@media(max-width:860px){.two{grid-template-columns:1fr}}
+
+/* pricing */
+.price-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:stretch}
+.calc{border:2px solid var(--sky);background:#1f3a5f;border-radius:var(--radius);padding:1.8rem}
+.calc .out{display:flex;align-items:baseline;gap:.6rem;margin:.4rem 0 1.2rem;flex-wrap:wrap}
+.calc .price{font-size:3rem;font-weight:800;line-height:1}
+.calc .per{color:#b8c4d6}
+.calc label{display:block;font-size:.85rem;color:#b8c4d6;margin-bottom:.4rem}
+.calc .count{font-size:1.1rem;font-weight:700;color:#fff}
+input[type=range]{width:100%;accent-color:var(--sky);margin:.4rem 0 1rem}
+.calc .inc{color:#d6e2f2;font-size:.95rem;border-top:1px solid #4b6487;padding-top:1rem}
+.bands{border:1px solid #2c4466;border-radius:var(--radius);overflow:hidden}
+.bands table{width:100%;border-collapse:collapse;font-size:.98rem}
+.bands th{text-align:left;padding:.8rem 1.1rem;color:#b8c4d6;font-weight:600;border-bottom:1px solid #2c4466}
+.bands th:last-child,.bands td:last-child{text-align:right}
+.bands td{padding:.85rem 1.1rem;border-top:1px solid #2c4466}
+.bands td:last-child{font-weight:800;font-size:1.15rem}
+.bands tr.on td{background:#1f3a5f}
+.fine{margin-top:1.4rem;color:#b8c4d6;font-size:.92rem;max-width:52rem}
+@media(max-width:860px){.price-grid{grid-template-columns:1fr}}
+
+.contact .box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:2.2rem;box-shadow:var(--shadow);display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center}
+.contact h2{font-size:clamp(1.7rem,3vw,2.3rem);font-weight:800}
+.contact .name{font-size:1.15rem;font-weight:700}
+.contact .small{font-size:.9rem;color:var(--ink2);margin-top:.3rem}
+@media(max-width:760px){.contact .box{grid-template-columns:1fr}}
+
+footer{padding:2.5rem 0;border-top:1px solid var(--line);font-size:.85rem;color:var(--faint)}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="wordmark" href="#top">Tre<span>sor</span></a>
+    <div class="links">
+      <a href="#inside">What is inside</a>
+      <a href="#onsite">On site</a>
+      <a href="#pricing">Pricing</a>
+      <a class="btn" href="#contact">Book a demo</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Site safety portal for construction contractors</p>
+      <h1 style="margin-top:.8rem">Sign-in, training, talks, RAMS and forms. One portal for the whole site team.</h1>
+      <p class="lead">Operatives sign in and sign off on their phones, no app to install. The office sees who is where, what is signed and what is about to expire. And it is watched every day, so nothing slips.</p>
+      <div class="cta">
+        <a class="btn" href="#contact">Book a demo</a>
+        <a class="btn ghost" href="#pricing">See pricing</a>
+      </div>
+      <p class="sub">Built for firms running crews on housebuilder and main contractor sites.</p>
+    </div>
+    <div class="mock" aria-label="Example of the Tresor office view">
+      <div class="top"><b>Tre<span>sor</span></b><span>Your Company Ltd</span></div>
+      <div class="body">
+        <div class="stats">
+          <div class="stat ok"><div class="k">On site now</div><div class="n">19</div></div>
+          <div class="stat warn"><div class="k">Expiring</div><div class="n">3</div></div>
+          <div class="stat ok"><div class="k">Talks signed</div><div class="n">24 / 27</div></div>
+        </div>
+        <div class="row"><span>Silica dust: toolbox talk</span><span class="pill ok">24 signed</span></div>
+        <div class="row"><span>CSCS, J. Murphy</span><span class="pill warn">Expires in 41 days</span></div>
+        <div class="row"><span>Bannister Lane: site briefing</span><span class="pill ok">Confirmed</span></div>
+        <div class="row"><span>Hot works permit 0412</span><span class="pill bad">Not closed out</span></div>
+        <div class="row"><span>Scaffold inspection, Plot 14</span><span class="pill ok">Submitted</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="problem">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">The problem</p>
+      <h2>Health and safety is done. It just isn’t findable.</h2>
+      <p>Most contractors with 10 to 50 lads are doing the right things. Proving it, when the principal contractor or the auditor asks, is what takes the afternoon.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><h3>Talks on paper</h3><p>Signed sheets live in vans and folders. When the PC asks who was briefed on silica, it takes a day to prove it.</p></div>
+      <div class="card"><h3>Cards expire quietly</h3><p>A lapsed CSCS or NVQ gets found at the site gate, not by you. One refused sign-in costs a day’s labour and a difficult conversation.</p></div>
+      <div class="card"><h3>RAMS and permits in email</h3><p>Word documents per job, revised in replies, permits raised and never closed out. Nobody can say which revision is live on which site.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="navy statement">
+  <div class="wrap">
+    <p class="eyebrow">What Tresor is</p>
+    <h2 style="margin-top:.8rem">One portal for the whole site team, from the lad on the tools to the office.</h2>
+    <p class="big">Operatives sign in, sign talks and complete forms on their phones. Supervisors issue briefings and close out permits on site. The office sees who is where, what is signed and what is about to expire, and so does the principal contractor when you choose to share it.</p>
+    <p class="tag">Your logo, your trade, your wording. It never looks like a template.</p>
+  </div>
+</section>
+
+<section id="inside">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">What is inside</p>
+      <h2>Eight things, one login</h2>
+    </div>
+    <div class="cards four">
+      <div class="card"><div class="num">01</div><h3>Site sign in and out</h3><p>QR sign-in with induction on first visit. Who is on site right now, and a fire register in one tap.</p></div>
+      <div class="card"><div class="num">02</div><h3>Operatives and training</h3><p>Every card and qualification, with expiring and missing ones flagged. Matrix as a PDF in one click.</p></div>
+      <div class="card"><div class="num">03</div><h3>Toolbox talks</h3><p>A library written for your trade. Send a link, the lads sign on their phone, the register builds itself.</p></div>
+      <div class="card"><div class="num">04</div><h3>RAMS and site packs</h3><p>RAMS built and revised per job inside the portal. A short site briefing the lads confirm on arrival.</p></div>
+      <div class="card"><div class="num">05</div><h3>Digitised forms</h3><p>Permits, inspections, plant checks and site diaries, filled in on site and kept against the job.</p></div>
+      <div class="card"><div class="num">06</div><h3>Company policies</h3><p>Signed by the director and the workforce through one link, versioned when they change.</p></div>
+      <div class="card"><div class="num">07</div><h3>Occupational health</h3><p>Health questionnaires covering vibration, noise and skin, with anything needing review flagged.</p></div>
+      <div class="card"><div class="num">08</div><h3>Evidence on demand</h3><p>Registers, matrices and signed documents exported for any principal contractor or SSIP renewal.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="onsite">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">On site</p>
+      <h2>A toolbox talk takes a lad two minutes</h2>
+      <p>No app to install, no account to set up. A link, one page, a signature. Sign-in, briefings and forms work the same way.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="big">1</div><h3>Link lands on WhatsApp</h3><p>The supervisor sends it from the portal, or forwards it on.</p></div>
+      <div class="step"><div class="big">2</div><h3>Reads one page</h3><p>Numbered sections, plain English, written for your trade and your sites.</p></div>
+      <div class="step"><div class="big">3</div><h3>Signs with a finger</h3><p>Name, company and signature, timestamped. Done before the kettle boils.</p></div>
+      <div class="step last"><div class="big">4</div><h3>Office sees the register</h3><p>Who has signed, who has not, and a PDF register ready for the principal contractor.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="watched">
+  <div class="wrap">
+    <div class="two">
+      <div>
+        <p class="eyebrow">Underneath it</p>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800;margin-top:.6rem">It is watched, not just hosted</h2>
+        <p class="big">Every Tresor portal reports into one central dashboard, checked daily by chartered health and safety professionals. Expiring cards, half-signed talks and open permits are flagged and chased before they become a problem at the gate.</p>
+        <p class="big muted">Off-the-shelf platforms hand you an empty system. Tresor arrives with a talk library for your trade and people behind it who already know the housebuilders you work for.</p>
+      </div>
+      <div class="list">
+        <p class="eyebrow">Included at every size</p>
+        <div>Daily watch on expiries, open talks and open permits</div>
+        <div>Trade talk library and RAMS templates from day one</div>
+        <div>Chartered (CMIOSH) adviser on the end of the phone</div>
+        <div>SSIP and principal contractor evidence exported on demand</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="pricing">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Pricing</p>
+      <h2>One monthly figure, scaled to your headcount</h2>
+      <p>Every plan includes all eight modules, unlimited talks and forms, the trade library, chartered adviser support and the daily watch.</p>
+    </div>
+    <div class="price-grid">
+      <div class="calc">
+        <label for="ops">How many operatives?</label>
+        <div class="count"><span id="opsOut">25</span> operatives</div>
+        <input type="range" id="ops" min="1" max="120" value="25" aria-label="Number of operatives">
+        <div class="out"><span class="price" id="priceOut">£350</span><span class="per" id="perOut">per month, ex VAT</span></div>
+        <p class="inc"><b style="color:#fff">Running your own sites?</b> Site sign in and out with inductions is added per company for £99 a month, however many sites.</p>
+      </div>
+      <div class="bands">
+        <table>
+          <thead><tr><th>Operatives</th><th>Per month</th></tr></thead>
+          <tbody id="bands">
+            <tr data-max="10"><td>Up to 10</td><td>£250</td></tr>
+            <tr data-max="25"><td>11 to 25</td><td>£350</td></tr>
+            <tr data-max="50"><td>26 to 50</td><td>£500</td></tr>
+            <tr data-max="100"><td>51 to 100</td><td>£750</td></tr>
+            <tr data-max="999"><td>Over 100</td><td>Quoted</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="fine">No set-up fee. No contract beyond the month. Site sign-in is optional for firms working on other people’s sites.</p>
+  </div>
+</section>
+
+<section id="start">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Getting started</p>
+      <h2>Nothing to send, nothing to install</h2>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="num">01</div><h3>Your portal is built</h3><p>Tell us your trade and roughly how many operatives. Your portal arrives with your name on it and a talk library and RAMS templates for your trade already inside.</p></div>
+      <div class="card"><div class="num">02</div><h3>The lads are in</h3><p>Add operatives from your phone, or let them add themselves and their cards from a link. The director signs the policies, the first talk goes out on WhatsApp.</p></div>
+      <div class="card"><div class="num">03</div><h3>It stays current</h3><p>New jobs get their RAMS and briefing, expiring cards get chased, talks go out on a schedule, and the evidence is there whenever anyone asks for it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="box">
+      <div>
+        <p class="eyebrow">Book a demo</p>
+        <h2 style="margin-top:.6rem">Tell us your trade and your headcount. We will build your portal and show you round it.</h2>
+      </div>
+      <div>
+        <p class="name">Dec Boydell, Founder</p>
+        <p class="small">Message or call to arrange a demo, on site or over a video call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="wordmark" style="font-size:1.1rem">Tre<span>sor</span></span>
+    <span>© 2026 Tresor. Site safety portal for construction contractors.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var bands=[[10,'£250'],[25,'£350'],[50,'£500'],[100,'£750'],[999,'Quoted']];
+  var ops=document.getElementById('ops'),opsOut=document.getElementById('opsOut'),priceOut=document.getElementById('priceOut'),perOut=document.getElementById('perOut');
+  var rows=document.querySelectorAll('#bands tr');
+  function update(){
+    var n=parseInt(ops.value,10); opsOut.textContent=n>100?'100+':n;
+    var i=0; while(n>bands[i][0]) i++;
+    priceOut.textContent=bands[i][1];
+    perOut.textContent=bands[i][1]==='Quoted'?'we will price it with you':'per month, ex VAT';
+    rows.forEach(function(r,j){ r.className = j===i ? 'on' : ''; });
+  }
+  ops.addEventListener('input',update); update();
+})();
+</script>
+</body>
+</html>
