@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tresor: the site safety portal for construction contractors</title>
-<meta name="description" content="Sign-in, training, toolbox talks, RAMS and digitised forms for the whole site team, in one portal that is watched daily.">
+<title>Tresor: safety, made incredibly easy to do</title>
+<meta name="description" content="Scan a card and the training matrix is done. Send a link and the toolbox talk signs itself. Tresor puts site safety on the phone the team already carries.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -123,6 +123,15 @@ input[type=range]{width:100%;accent-color:var(--sky);margin:.4rem 0 1rem}
 
 footer{padding:2.5rem 0;border-top:1px solid var(--line);font-size:.85rem;color:var(--faint)}
 footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+
+.feature .two h2{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800;margin-top:.6rem}
+.flow{margin:1.4rem 0 0;padding:0;list-style:none;counter-reset:f}
+.flow li{position:relative;padding:.55rem 0 .55rem 2.6rem;counter-increment:f;font-size:1.02rem;border-top:1px solid var(--line)}
+.flow li:first-child{border-top:none}
+.flow li:before{content:counter(f);position:absolute;left:0;top:.5rem;font-weight:800;color:var(--navy);font-size:1.2rem}
+.dark .flow li{border-color:#2c4466}.dark .flow li:before{color:var(--sky)}
+.dark .list{background:#1f3a5f;border-color:#2c4466}.dark .list div{border-color:#4b6487;color:#d6e2f2}
+.hero .lead{max-width:36rem}
 </style>
 </head>
 <body>
@@ -131,10 +140,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
   <div class="wrap">
     <a class="wordmark" href="#top">Tre<span>sor</span></a>
     <div class="links">
-      <a href="#inside">What is inside</a>
-      <a href="#onsite">On site</a>
+      <a href="#cards">Training</a>
+      <a href="#talks">Toolbox talks</a>
+      <a href="#signin">Sign-in</a>
+      <a href="#rams">RAMS and forms</a>
       <a href="#pricing">Pricing</a>
-      <a class="btn" href="#contact">Book a demo</a>
     </div>
   </div>
 </nav>
@@ -143,13 +153,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
   <div class="wrap">
     <div>
       <p class="eyebrow">Site safety portal for construction contractors</p>
-      <h1 style="margin-top:.8rem">Sign-in, training, talks, RAMS and forms. One portal for the whole site team.</h1>
-      <p class="lead">Operatives sign in and sign off on their phones, no app to install. The office sees who is where, what is signed and what is about to expire. And it is watched every day, so nothing slips.</p>
-      <div class="cta">
-        <a class="btn" href="#contact">Book a demo</a>
-        <a class="btn ghost" href="#pricing">See pricing</a>
-      </div>
-      <p class="sub">Built for firms running crews on housebuilder and main contractor sites.</p>
+      <h1 style="margin-top:.8rem">Safety, made incredibly easy to do.</h1>
+      <p class="lead">Scan a card and the training matrix is done. Send a link and the toolbox talk signs itself. Scan a QR and you are on site. Tresor puts the whole of site safety on the phone the team already carries, and the paperwork does itself.</p>
+      <p class="sub">Nothing to install. Nothing to print. Nothing to file.</p>
     </div>
     <div class="mock" aria-label="Example of the Tresor office view">
       <div class="top"><b>Tre<span>sor</span></b><span>Your Company Ltd</span></div>
@@ -159,89 +165,121 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
           <div class="stat warn"><div class="k">Expiring</div><div class="n">3</div></div>
           <div class="stat ok"><div class="k">Talks signed</div><div class="n">24 / 27</div></div>
         </div>
+        <div class="row"><span>CSCS, J. Murphy: card scanned</span><span class="pill ok">Filed</span></div>
         <div class="row"><span>Silica dust: toolbox talk</span><span class="pill ok">24 signed</span></div>
-        <div class="row"><span>CSCS, J. Murphy</span><span class="pill warn">Expires in 41 days</span></div>
-        <div class="row"><span>Bannister Lane: site briefing</span><span class="pill ok">Confirmed</span></div>
-        <div class="row"><span>Hot works permit 0412</span><span class="pill bad">Not closed out</span></div>
+        <div class="row"><span>CPCS, D. Hale</span><span class="pill warn">Renewal chased</span></div>
+        <div class="row"><span>Hot works permit 0412</span><span class="pill bad">Close-out due</span></div>
         <div class="row"><span>Scaffold inspection, Plot 14</span><span class="pill ok">Submitted</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="problem">
-  <div class="wrap">
-    <div class="head">
-      <p class="eyebrow">The problem</p>
-      <h2>Health and safety is done. It just isn’t findable.</h2>
-      <p>Most contractors with 10 to 50 lads are doing the right things. Proving it, when the principal contractor or the auditor asks, is what takes the afternoon.</p>
-    </div>
-    <div class="cards">
-      <div class="card"><h3>Talks on paper</h3><p>Signed sheets live in vans and folders. When the PC asks who was briefed on silica, it takes a day to prove it.</p></div>
-      <div class="card"><h3>Cards expire quietly</h3><p>A lapsed CSCS or NVQ gets found at the site gate, not by you. One refused sign-in costs a day’s labour and a difficult conversation.</p></div>
-      <div class="card"><h3>RAMS and permits in email</h3><p>Word documents per job, revised in replies, permits raised and never closed out. Nobody can say which revision is live on which site.</p></div>
-    </div>
-  </div>
-</section>
-
 <section class="navy statement">
   <div class="wrap">
-    <p class="eyebrow">What Tresor is</p>
-    <h2 style="margin-top:.8rem">One portal for the whole site team, from the lad on the tools to the office.</h2>
-    <p class="big">Operatives sign in, sign talks and complete forms on their phones. Supervisors issue briefings and close out permits on site. The office sees who is where, what is signed and what is about to expire, and so does the principal contractor when you choose to share it.</p>
-    <p class="tag">Your logo, your trade, your wording. It never looks like a template.</p>
+    <p class="eyebrow">The idea</p>
+    <h2 style="margin-top:.8rem">Doing safety properly should not mean paperwork.</h2>
+    <p class="big">Every bit of site safety admin, typing up cards, printing talks, chasing signatures, filing permits, is something a phone can do in seconds. Tresor is that phone, for the whole site team. The supervisor stops messing about, the office stops typing, and the record builds itself.</p>
   </div>
 </section>
 
-<section id="inside">
+<section class="feature" id="cards">
+  <div class="wrap two">
+    <div>
+      <p class="eyebrow">Training</p>
+      <h2>Scan a card. The matrix is done.</h2>
+      <p class="big">Point the phone at a CSCS, CPCS or any training card and Tresor reads the name, scheme and expiry and files it against the operative. No typing, no spreadsheet.</p>
+      <ol class="flow">
+        <li>Operative or supervisor scans the card from the link, on site or at induction</li>
+        <li>Details and expiry date are read and filed automatically</li>
+        <li>Renewals are chased by Tresor before they lapse, by message to the operative and the office</li>
+        <li>The matrix is a live page, and a PDF in one tap for any principal contractor or SSIP renewal</li>
+      </ol>
+    </div>
+    <div class="list"><p class="eyebrow">What it replaces</p><div>The spreadsheet nobody has updated since the SMAS renewal</div><div>Photocopies of cards in a folder in the office</div><div>A card found expired at the site gate</div></div>
+  </div>
+</section>
+
+<section class="feature dark" id="talks">
+  <div class="wrap two">
+    <div>
+      <p class="eyebrow">Toolbox talks</p>
+      <h2>The supervisor sends a link. That is the whole job.</h2>
+      <p class="big muted">No printing, no sign sheet, no chasing the lads for a signature, no photographing the sheet for the office.</p>
+      <ol class="flow">
+        <li>Supervisor picks a talk from the library written for your trade, or Tresor sends one on the schedule</li>
+        <li>The link goes out on WhatsApp; the lads read one page and sign with a finger</li>
+        <li>The register builds itself, timestamped, with who has not signed shown plainly</li>
+        <li>A PDF register is ready whenever the principal contractor asks</li>
+      </ol>
+    </div>
+    <div class="list"><p class="eyebrow">What it replaces</p><div>Printed talk packs and a sign sheet going round the van</div><div>A supervisor spending Friday afternoon collecting signatures</div><div>Registers that live in a photo on someone’s phone</div></div>
+  </div>
+</section>
+
+<section class="feature" id="signin">
+  <div class="wrap two">
+    <div>
+      <p class="eyebrow">Site sign in and out</p>
+      <h2>A QR at the gate, and you know who is on site.</h2>
+      <p class="big">The operative scans the QR, is inducted on first visit, and is signed in. Out is the same scan.</p>
+      <ol class="flow">
+        <li>First visit shows the site induction; it is read and signed once, on the phone</li>
+        <li>Every visit after is one scan in and one scan out</li>
+        <li>The site manager sees who is on site right now, and a fire register in one tap</li>
+        <li>Daily attendance per site is kept automatically, for billing as much as for safety</li>
+      </ol>
+    </div>
+    <div class="list"><p class="eyebrow">What it replaces</p><div>The signing-in book by the cabin door</div><div>Induction sheets filed in the site office</div><div>Not knowing who is on site when the alarm goes</div></div>
+  </div>
+</section>
+
+<section class="feature dark" id="rams">
+  <div class="wrap two">
+    <div>
+      <p class="eyebrow">RAMS and forms</p>
+      <h2>RAMS in minutes, permits that close themselves out.</h2>
+      <p class="big muted">RAMS are built from a library of activity blocks for your trade, revised per job, and briefed to the lads on arrival. Permits, inspections, plant checks and site diaries are filled in on the phone and kept against the job.</p>
+      <ol class="flow">
+        <li>New job: pick the activities, add the site detail, and the RAMS is produced in the proper layout</li>
+        <li>The lads confirm a short site briefing from the job pack on arrival; that is their signature</li>
+        <li>Hot works and other permits are raised on site and Tresor chases the close-out</li>
+        <li>Inspections and diaries are completed where the work is, not written up later</li>
+      </ol>
+    </div>
+    <div class="list"><p class="eyebrow">What it replaces</p><div>Copying the last job’s Word RAMS and hoping the revision is right</div><div>Permits raised on paper and never closed</div><div>Diaries written up from memory at the end of the week</div></div>
+  </div>
+</section>
+
+<section id="rest">
   <div class="wrap">
     <div class="head">
-      <p class="eyebrow">What is inside</p>
-      <h2>Eight things, one login</h2>
+      <p class="eyebrow">And the rest</p>
+      <h2>Everything else, done the same way</h2>
     </div>
-    <div class="cards four">
-      <div class="card"><div class="num">01</div><h3>Site sign in and out</h3><p>QR sign-in with induction on first visit. Who is on site right now, and a fire register in one tap.</p></div>
-      <div class="card"><div class="num">02</div><h3>Operatives and training</h3><p>Every card and qualification, with expiring and missing ones flagged. Matrix as a PDF in one click.</p></div>
-      <div class="card"><div class="num">03</div><h3>Toolbox talks</h3><p>A library written for your trade. Send a link, the lads sign on their phone, the register builds itself.</p></div>
-      <div class="card"><div class="num">04</div><h3>RAMS and site packs</h3><p>RAMS built and revised per job inside the portal. A short site briefing the lads confirm on arrival.</p></div>
-      <div class="card"><div class="num">05</div><h3>Digitised forms</h3><p>Permits, inspections, plant checks and site diaries, filled in on site and kept against the job.</p></div>
-      <div class="card"><div class="num">06</div><h3>Company policies</h3><p>Signed by the director and the workforce through one link, versioned when they change.</p></div>
-      <div class="card"><div class="num">07</div><h3>Occupational health</h3><p>Health questionnaires covering vibration, noise and skin, with anything needing review flagged.</p></div>
-      <div class="card"><div class="num">08</div><h3>Evidence on demand</h3><p>Registers, matrices and signed documents exported for any principal contractor or SSIP renewal.</p></div>
+    <div class="cards">
+      <div class="card"><h3>Company policies</h3><p>Director signs once, the workforce signs from a link, and a change creates a new version with fresh signatures.</p></div>
+      <div class="card"><h3>Occupational health</h3><p>Vibration, noise and skin questionnaires completed on the phone, with anything that needs a review flagged automatically.</p></div>
+      <div class="card"><h3>Evidence on demand</h3><p>Registers, matrices and signed documents exported for any principal contractor or SSIP renewal, from the record that built itself.</p></div>
     </div>
+    <p class="muted" style="margin-top:1.8rem;max-width:48rem;font-size:1.08rem">Each portal is built for one company: its logo, its trade, its wording. It never looks like a template, and nobody is left to set it up themselves.</p>
   </div>
 </section>
 
-<section class="dark" id="onsite">
-  <div class="wrap">
-    <div class="head">
-      <p class="eyebrow">On site</p>
-      <h2>A toolbox talk takes a lad two minutes</h2>
-      <p>No app to install, no account to set up. A link, one page, a signature. Sign-in, briefings and forms work the same way.</p>
-    </div>
-    <div class="steps">
-      <div class="step"><div class="big">1</div><h3>Link lands on WhatsApp</h3><p>The supervisor sends it from the portal, or forwards it on.</p></div>
-      <div class="step"><div class="big">2</div><h3>Reads one page</h3><p>Numbered sections, plain English, written for your trade and your sites.</p></div>
-      <div class="step"><div class="big">3</div><h3>Signs with a finger</h3><p>Name, company and signature, timestamped. Done before the kettle boils.</p></div>
-      <div class="step last"><div class="big">4</div><h3>Office sees the register</h3><p>Who has signed, who has not, and a PDF register ready for the principal contractor.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="watched">
+<section id="support">
   <div class="wrap">
     <div class="two">
       <div>
-        <p class="eyebrow">Underneath it</p>
-        <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800;margin-top:.6rem">It is watched, not just hosted</h2>
-        <p class="big">Every Tresor portal reports into one central dashboard, checked daily by chartered health and safety professionals. Expiring cards, half-signed talks and open permits are flagged and chased before they become a problem at the gate.</p>
-        <p class="big muted">Off-the-shelf platforms hand you an empty system. Tresor arrives with a talk library for your trade and people behind it who already know the housebuilders you work for.</p>
+        <p class="eyebrow">Support</p>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800;margin-top:.6rem">Underpinned by real support, when you need it</h2>
+        <p class="big">The tech does the admin. Behind it, chartered health and safety professionals are on the end of the phone when something needs a human: an incident, a principal contractor query, an audit, a RAMS for a job you have not done before.</p>
+        <p class="big muted">Every portal also reports into one central dashboard that is checked daily, so expiring cards, half-signed talks and open permits are picked up and chased before they become a problem at the gate. Off-the-shelf platforms hand you an empty system; Tresor comes with people who already know the housebuilders you work for.</p>
       </div>
       <div class="list">
         <p class="eyebrow">Included at every size</p>
-        <div>Daily watch on expiries, open talks and open permits</div>
-        <div>Trade talk library and RAMS templates from day one</div>
         <div>Chartered (CMIOSH) adviser on the end of the phone</div>
+        <div>Trade talk library and RAMS blocks from day one</div>
+        <div>Daily check on expiries, open talks and open permits</div>
         <div>SSIP and principal contractor evidence exported on demand</div>
       </div>
     </div>
@@ -252,58 +290,26 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
   <div class="wrap">
     <div class="head">
       <p class="eyebrow">Pricing</p>
-      <h2>One monthly figure, scaled to your headcount</h2>
-      <p>Every plan includes all eight modules, unlimited talks and forms, the trade library, chartered adviser support and the daily watch.</p>
+      <h2>One monthly figure, scaled to the size of the firm</h2>
+      <p>Every plan includes card scanning, talks, RAMS, forms, policies, occupational health, evidence export, the trade library, chartered adviser support and the daily check.</p>
     </div>
     <div class="price-grid">
-      <div class="calc">
-        <label for="ops">How many operatives?</label>
-        <div class="count"><span id="opsOut">25</span> operatives</div>
-        <input type="range" id="ops" min="1" max="120" value="25" aria-label="Number of operatives">
-        <div class="out"><span class="price" id="priceOut">£350</span><span class="per" id="perOut">per month, ex VAT</span></div>
-        <p class="inc"><b style="color:#fff">Running your own sites?</b> Site sign in and out with inductions is added per company for £99 a month, however many sites.</p>
-      </div>
       <div class="bands">
         <table>
           <thead><tr><th>Operatives</th><th>Per month</th></tr></thead>
-          <tbody id="bands">
-            <tr data-max="10"><td>Up to 10</td><td>£250</td></tr>
-            <tr data-max="25"><td>11 to 25</td><td>£350</td></tr>
-            <tr data-max="50"><td>26 to 50</td><td>£500</td></tr>
-            <tr data-max="100"><td>51 to 100</td><td>£750</td></tr>
-            <tr data-max="999"><td>Over 100</td><td>Quoted</td></tr>
+          <tbody>
+            <tr><td>Up to 10</td><td>£250</td></tr>
+            <tr><td>11 to 25</td><td>£350</td></tr>
+            <tr><td>26 to 50</td><td>£500</td></tr>
+            <tr><td>51 to 100</td><td>£750</td></tr>
+            <tr><td>Over 100</td><td>Quoted</td></tr>
           </tbody>
         </table>
       </div>
-    </div>
-    <p class="fine">No set-up fee. No contract beyond the month. Site sign-in is optional for firms working on other people’s sites.</p>
-  </div>
-</section>
-
-<section id="start">
-  <div class="wrap">
-    <div class="head">
-      <p class="eyebrow">Getting started</p>
-      <h2>Nothing to send, nothing to install</h2>
-    </div>
-    <div class="cards">
-      <div class="card"><div class="num">01</div><h3>Your portal is built</h3><p>Tell us your trade and roughly how many operatives. Your portal arrives with your name on it and a talk library and RAMS templates for your trade already inside.</p></div>
-      <div class="card"><div class="num">02</div><h3>The lads are in</h3><p>Add operatives from your phone, or let them add themselves and their cards from a link. The director signs the policies, the first talk goes out on WhatsApp.</p></div>
-      <div class="card"><div class="num">03</div><h3>It stays current</h3><p>New jobs get their RAMS and briefing, expiring cards get chased, talks go out on a schedule, and the evidence is there whenever anyone asks for it.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact" style="padding-top:0">
-  <div class="wrap">
-    <div class="box">
-      <div>
-        <p class="eyebrow">Book a demo</p>
-        <h2 style="margin-top:.6rem">Tell us your trade and your headcount. We will build your portal and show you round it.</h2>
-      </div>
-      <div>
-        <p class="name">Dec Boydell, Founder</p>
-        <p class="small">Message or call to arrange a demo, on site or over a video call.</p>
+      <div class="calc">
+        <h3 style="color:var(--sky);font-size:1.25rem">Running your own sites?</h3>
+        <p class="inc" style="border:none;padding-top:.6rem">Site sign in and out with inductions is added per company for <b style="color:#fff">£99 a month</b>, however many sites. Optional for firms working on other people’s sites.</p>
+        <p class="inc">No set-up fee. No contract beyond the month. All prices ex VAT.</p>
       </div>
     </div>
   </div>
@@ -315,21 +321,5 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
     <span>© 2026 Tresor. Site safety portal for construction contractors.</span>
   </div>
 </footer>
-
-<script>
-(function(){
-  var bands=[[10,'£250'],[25,'£350'],[50,'£500'],[100,'£750'],[999,'Quoted']];
-  var ops=document.getElementById('ops'),opsOut=document.getElementById('opsOut'),priceOut=document.getElementById('priceOut'),perOut=document.getElementById('perOut');
-  var rows=document.querySelectorAll('#bands tr');
-  function update(){
-    var n=parseInt(ops.value,10); opsOut.textContent=n>100?'100+':n;
-    var i=0; while(n>bands[i][0]) i++;
-    priceOut.textContent=bands[i][1];
-    perOut.textContent=bands[i][1]==='Quoted'?'we will price it with you':'per month, ex VAT';
-    rows.forEach(function(r,j){ r.className = j===i ? 'on' : ''; });
-  }
-  ops.addEventListener('input',update); update();
-})();
-</script>
 </body>
 </html>
